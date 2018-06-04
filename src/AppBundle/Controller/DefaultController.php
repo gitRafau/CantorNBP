@@ -8,11 +8,9 @@ use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
-    /**
-     * @Route("/", name="homepage")
-     */
-    public function homeAction(Request $request)
-    {
-        return $this->render('cantor/home.html.twig');
-    }
+    //
+//    public function homeAction(Request $request)
+//    {
+//        return $this->render('cantor/home.html.twig');
+//    }
 }
