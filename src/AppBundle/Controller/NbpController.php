@@ -15,10 +15,12 @@ class NbpController extends Controller{
     public function listAction(){
         
         $test = 'Twój kantor On-line';
+        $task = 'Programujemy w Symfony 3.4';
         
         
         return $this->render('cantor/home.html.twig', [
-            'test' => $test
+            'test' => $test,
+            'task' => $task
         ]);
     }
 }
