@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond');
+
+html, body{
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+}
+
+div.main{
+    margin-top: 30px;
+
+}
+
+div.jumbotron{
+    
+}
+
