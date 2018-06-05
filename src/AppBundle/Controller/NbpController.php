@@ -6,22 +6,28 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class NbpController extends Controller{
-    
-    
+class NbpController extends Controller {
+
     /**
-     *@Route("/", name="list") 
+     * @Route("/", name="list") 
      */
-    public function listAction(){
-        
-        $test = 'Twój kantor On-line';
-        $task = 'Programujemy w Symfony 3.4';
-        
-        
+    public function priceCoursebyCountry() {
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, 'http://api.nbp.pl/api/exchangerates/tables/A/');
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: application/json')); 
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        $response = curl_exec($ch);
+
+
+       $currently_price = json_decode($response);
+       
+       //dump($currently_price); die();
+
         return $this->render('cantor/home.html.twig', [
-            'test' => $test,
-            'task' => $task
+           'act_price' => $currently_price
         ]);
     }
-}
 
+}

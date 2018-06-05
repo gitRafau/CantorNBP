@@ -3,8 +3,35 @@
 {% block body %}
     <div class="jumbotron">
         <div class="container">
-            {{test}}<br/>
-            {{task| upper}}
+            <div class="row">
+                <div class="col-sm-7">
+                    <h1 class="page-header">Dbamy o wartość pieniądza!</h1>
+                    <img src="{{asset('images/piniondze.jpg')}}" class="img-responsive img-circle" alt="Banknoty">
+                </div>
+                <div class="col-sm-5">
+                    <h3 class="text-success"><b>Aktualne ceny kursów</b></h3>
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Currency</th>
+                                <th>Mid</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for rate in act_price %}
+                                {% for price in rate.rates %}
+                                    <tr>
+                                        <td>{{price.code}}</td>
+                                        <td>{{price.currency |capitalize}}</td>
+                                        <td>{{price.mid | round(2, 'floor')}}</td>
+                                    </tr>
+                                {% endfor %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 
