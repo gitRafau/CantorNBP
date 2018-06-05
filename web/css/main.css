@@ -5,12 +5,25 @@ html, body{
     font-weight: 600;
 }
 
+li a{
+    margin-top: 10px;
+    color: #3c763d;
+}
+
 div.main{
     margin-top: 30px;
+}
+
+h1.page-header{
+    color: #3c763d;
+    font-size: 38px;
+    font-weight: 600;
+    font-style: oblique;
+    text-align: center;
 
 }
 
 div.jumbotron{
-    
+
 }
 
