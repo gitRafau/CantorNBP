@@ -13,16 +13,16 @@
                     <table class="table table-bordered table-hover">
                         <thead>
                             <tr>
-                                <th>Code</th>
-                                <th>Currency</th>
-                                <th>Mid</th>
+
+                                <th>Waluta</th>
+                                <th>Średni kurs</th>
                             </tr>
                         </thead>
                         <tbody>
                             {% for rate in act_price %}
                                 {% for price in rate.rates %}
                                     <tr>
-                                        <td>{{price.code}}</td>
+
                                         <td>{{price.currency |capitalize}}</td>
                                         <td>{{price.mid | round(2, 'floor')}}</td>
                                     </tr>
