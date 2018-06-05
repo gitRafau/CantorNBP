@@ -23,7 +23,7 @@
                                 {% for price in rate.rates %}
                                     <tr>
 
-                                        <td>{{price.currency |capitalize}}</td>
+                                        <td>{{price.currency | capitalize}}</td>
                                         <td>{{price.mid | round(2, 'floor')}}</td>
                                     </tr>
                                 {% endfor %}
