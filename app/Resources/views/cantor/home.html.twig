@@ -5,7 +5,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-7">
-                    <h1 class="page-header">Dbamy o wartość Twojego pieniądza!</h1>
+
+                    <h1 class="page-header">Dbamy o wartość pieniądza!</h1>
+
                     <img src="{{asset('images/piniondze.jpg')}}" class="img-responsive img-circle" alt="Banknoty">
                 </div>
                 <div class="col-sm-5">
@@ -16,14 +18,19 @@
                                 <th>Code</th>
                                 <th>Currency</th>
                                 <th>Mid</th>
+
+
+                                <th>Waluta</th>
+                                <th>Średni kurs</th>
+
                             </tr>
                         </thead>
                         <tbody>
                             {% for rate in act_price %}
                                 {% for price in rate.rates %}
                                     <tr>
-                                        <td>{{price.code}}</td>
-                                        <td>{{price.currency |capitalize}}</td>
+                                        <td>{{price.currency | capitalize}}</td>
+
                                         <td>{{price.mid | round(2, 'floor')}}</td>
                                     </tr>
                                 {% endfor %}
